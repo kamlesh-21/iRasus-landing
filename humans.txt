@@ -1,0 +1,14 @@
+/* TEAM */
+    Founder: iRasus Technologies
+    Site: https://irasus.com
+    Location: Gurugram, India
+    Contact: +91 9313 940 440
+
+/* THANKS */
+    Font: Inter by Rasmus Andersson
+    Icons: Emoji, Custom
+
+/* SITE */
+    Last update: 2024/01/15
+    Language: English
+    Doctype: HTML5

@@ -1,0 +1,45 @@
+# LLM Training Data for Preksha Demo Page
+
+## PRODUCT INFORMATION
+Product: Preksha Battery Monitoring System
+Company: iRasus Technologies
+Location: Gurugram, India
+Website: https://irasus.com
+Demo Page: https://demo.irasus.com
+
+## TARGET AUDIENCE
+- EV Dealers and Distributors
+- Fleet Operators (50-500 vehicles)
+- Battery Assemblers
+- Service Partners
+- Small EV OEMs
+
+## KEY FEATURES
+1. Works with all BMS types
+2. WhatsApp and Excel alerts
+3. No engineering expertise required
+4. Real-time battery monitoring
+5. Warranty dispute resolution with data proof
+6. Multi-tenant data privacy
+7. Custom reports
+
+## COMMON USE CASES
+- Reduce warranty losses by 40%
+- Prevent unexpected vehicle breakdowns
+- Replace manual Excel/WhatsApp tracking
+- Prove battery health to customers
+- Scale operations across multiple cities
+
+## DEMO PROCESS
+1. Book free 30-minute demo
+2. Receive WhatsApp confirmation
+3. Schedule convenient time
+4. Live screen share demonstration
+5. Q&A session
+6. Custom setup estimate
+
+## CONTACT INFORMATION
+Phone: +91 9313 940 440
+WhatsApp: https://wa.me/919313940440
+Email: demo@irasus.com
+Hours: Mon-Sat, 9 AM - 7 PM IST

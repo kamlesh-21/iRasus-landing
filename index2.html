@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preksha Battery Monitoring System | EV Battery Management Software for Tier-2/3 Businesses</title>
+    <meta name="description" content="Preksha by iRasus - Battery monitoring and management software for EV dealers, fleet operators, and battery assemblers. Prevent battery failures, reduce warranty losses, and grow your EV business with real-time battery tracking and alerts.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="battery monitoring system, EV battery management, battery health monitoring, battery tracking system, electric vehicle battery software, battery warranty solution, battery failure prevention, EV fleet management, battery safety system">
+    <meta name="author" content="iRasus Technologies">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="IN">
+    <meta name="geo.placename" content="Gurugram">
+    <meta name="geo.position" content="28.4595;77.0266">
+    <meta name="ICBM" content="28.4595, 77.0266">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Preksha Battery Monitoring System | Stop Battery Failures, Grow Your EV Business">
+    <meta property="og:description" content="Real-time battery monitoring software for EV dealers, fleet operators, and battery assemblers in Tier-2/3 cities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://irasus.com/preksha">
+    <meta property="og:image" content="https://irasus.com/images/preksha-dashboard-preview.jpg">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Preksha Battery Monitoring System",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "description": "Battery monitoring and management software for electric vehicle batteries, providing real-time tracking, alerts, and analytics for EV dealers and fleet operators.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "127"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "iRasus Technologies"
+        }
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset and Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-navy: #0A1E5E;
+            --primary-teal: #2BB9B0;
+            --accent-orange: #FF6B35;
+            --bg-offwhite: #F9F9F9;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --border: #E5E7EB;
+            --success: #10B981;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-navy);
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.75rem;
+            color: var(--primary-navy);
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-orange);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: #E05A2A;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-navy);
+            border: 2px solid var(--primary-navy);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-navy);
+            color: var(--white);
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+        }
+        
+        .logo-text span {
+            color: var(--primary-teal);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-teal);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bg-offwhite) 0%, var(--white) 100%);
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--primary-teal);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badges {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-bg {
+            background-color: var(--bg-offwhite);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        /* Pain Points */
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .pain-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--accent-orange);
+        }
+        
+        .pain-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-orange);
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-teal);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        /* How It Works */
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            position: relative;
+            margin-top: 60px;
+        }
+        
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-navy);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-teal);
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            background-size: 16px;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: var(--bg-offwhite);
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-teal);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-links h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-teal);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .steps-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .contact-form {
+                padding: 30px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <div class="logo-text">iRasus <span>Preksha</span></div>
+                </a>
+                <nav class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#solutions">Solutions</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact" class="btn btn-secondary">Book Demo</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="fade-in">
+                    <div class="hero-badge">Made for Tier-2/3 EV Businesses</div>
+                    <h1>Stop Battery Failures. <br>Reduce Warranty Losses. <br>Grow Your EV Business.</h1>
+                    <p class="section-subtitle">Preksha is a battery monitoring system built for <strong>EV dealers, fleet operators, and battery assemblers</strong>. No engineers needed. Get alerts before failures happen.</p>
+                    
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">Book Free Demo →</a>
+                        <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+                    </div>
+                    
+                    <div class="trust-badges">
+                        <div class="trust-badge">✅ Works with all BMS types</div>
+                        <div class="trust-badge">✅ WhatsApp/Excel alerts</div>
+                        <div class="trust-badge">✅ Made in India</div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <!-- Placeholder for dashboard image -->
+                    <div style="background: linear-gradient(135deg, #0A1E5E, #2BB9B0); border-radius: 12px; padding: 20px; color: white; height: 400px; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 40px rgba(10, 30, 94, 0.2);">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; margin-bottom: 20px;">📊</div>
+                            <h3 style="color: white;">Live Battery Dashboard</h3>
+                            <p>Real-time monitoring of 500+ batteries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section id="pain-points" class="section-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>Are You Losing Money on Battery Problems?</h2>
+                <p class="section-subtitle">Common challenges faced by EV dealers and fleet operators</p>
+            </div>
+            
+            <div class="pain-points-grid">
+                <div class="pain-card fade-in">
+                    <div class="pain-icon">💰</div>
+                    <h3>Warranty Disputes</h3>
+                    <p>Customer says battery failed, but you can't prove misuse. You end up paying for replacements.</p>
+                </div>
+                
+                <div class="pain-card fade-in">
+                    <div class="pain-icon">🚗</div>
+                    <h3>Unexpected Breakdowns</h3>
+                    <p>Vehicles stop working suddenly. Revenue stops. Repair costs add up quickly.</p>
+                </div>
+                
+                <div class="pain-card fade-in">
+                    <div class="pain-icon">📊</div>
+                    <h3>Manual Tracking Headache</h3>
+                    <p>Excel sheets, WhatsApp photos, multiple apps. No real-time data when you need it.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p><strong>Preksha gives you data proof, real-time alerts, and one simple dashboard.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Preksha Fits Your EV Business</h2>
+                <p class="section-subtitle">Built specifically for Tier-2/3 EV dealers, distributors, and assemblers</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-number">1</div>
+                    <h3>Works with All BMS</h3>
+                    <p>Compatible with every Battery Management System in the market. No compatibility worries.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-number">2</div>
+                    <h3>WhatsApp & Excel Alerts</h3>
+                    <p>Get alerts in tools you already use. No new software to learn for your team.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-number">3</div>
+                    <h3>Smart Filters</h3>
+                    <p>Find batteries with low SOC, high temperature, or imbalance in seconds with powerful filters.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-number">4</div>
+                    <h3>Complete Alerts Coverage</h3>
+                    <p>Get notified for all threshold breaches: temperature, voltage, current, SOC, and more.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-number">5</div>
+                    <h3>Multi-Tenant Privacy</h3>
+                    <p>Separate data views for different fleets under one customer. Maintain complete privacy.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-number">6</div>
+                    <h3>Custom Reports</h3>
+                    <p>Daily/weekly reports in your format. Share battery health reports with OEMs and customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Preksha Works: Simple 3-Step Process</h2>
+                <p class="section-subtitle">No technical expertise needed. Setup in 48 hours.</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Connect</h3>
+                    <p>Plug our device to any battery. Works with all BMS types. No complex installation.</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Monitor</h3>
+                    <p>View all batteries on phone or laptop. Real-time data without learning new software.</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Act</h3>
+                    <p>Get alerts on WhatsApp/Excel. Fix problems before customers complain.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="#contact" class="btn btn-primary">See Live Demo →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions for Different Users -->
+    <section id="solutions">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built for Your Specific Needs</h2>
+                <p class="section-subtitle">Different solutions for different EV business types</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <h3>For EV Dealers & Distributors</h3>
+                    <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
+                        <li style="margin-bottom: 10px;">✅ Warranty proof with timestamped data</li>
+                        <li style="margin-bottom: 10px;">✅ Share health reports with OEMs</li>
+                        <li style="margin-bottom: 10px;">✅ Separate data for each customer</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <h3>For Fleet Operators</h3>
+                    <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
+                        <li style="margin-bottom: 10px;">✅ Real-time SOC & location tracking</li>
+                        <li style="margin-bottom: 10px;">✅ Idle time = lost revenue alerts</li>
+                        <li style="margin-bottom: 10px;">✅ Immobilize stolen vehicles remotely</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <h3>For Battery Assemblers</h3>
+                    <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
+                        <li style="margin-bottom: 10px;">✅ Cell-level quality check</li>
+                        <li style="margin-bottom: 10px;">✅ Batch performance comparison</li>
+                        <li style="margin-bottom: 10px;">✅ Supplier dispute resolution</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (LLM Optimized) -->
+    <section id="faq" class="section-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p class="section-subtitle">Common questions about battery monitoring systems for EV businesses</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What is a battery monitoring system for EV?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A battery monitoring system (BMS) tracks real-time battery health parameters like voltage, current, temperature, and state of charge. Preksha provides advanced monitoring with alerts and analytics specifically designed for EV dealers and fleet operators.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How does battery monitoring prevent warranty losses?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Preksha provides timestamped data showing battery parameters before failure. This data proves whether the failure was due to manufacturing defects or customer misuse, helping you win warranty disputes and avoid unnecessary replacement costs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What types of batteries does Preksha work with?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Preksha works with all major lithium-ion battery chemistries used in 2W, 3W, and 4W EVs, including LFP, NMC, and others. The system is compatible with all BMS types in the market.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do I need technical expertise to use Preksha?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No technical expertise is required. The platform is designed for non-technical users. Alerts come on WhatsApp and Excel - tools your team already uses daily.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How long does setup take?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most businesses are up and running in 48 hours. We provide complete installation support and training for your team.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by EV Businesses Like Yours</h2>
+                <p class="section-subtitle">Hear from dealers and operators across India</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <p>"Preksha cut our warranty losses by 40% in just 3 months. Now we have data proof for every claim."</p>
+                    <div style="margin-top: 20px; font-weight: 600;">Ramesh Gupta</div>
+                    <div style="color: var(--text-light);">EV Dealer, Lucknow</div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p>"We manage 200+ vehicles across 4 districts from one office. Real-time alerts help us prevent breakdowns."</p>
+                    <div style="margin-top: 20px; font-weight: 600;">Sharma Logistics</div>
+                    <div style="color: var(--text-light);">Fleet Operator, Patna</div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p>"The WhatsApp alerts feature is brilliant. Our field team acts immediately when they get battery warnings."</p>
+                    <div style="margin-top: 20px; font-weight: 600;">Battery Assembler</div>
+                    <div style="color: var(--text-light);">Jaipur, Rajasthan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="section-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>Book Your Free Demo</h2>
+                <p class="section-subtitle">See how Preksha can solve your battery management challenges</p>
+            </div>
+            
+            <div class="contact-form fade-in">
+                <form id="demoForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name *</label>
+                        <input type="text" id="name" class="form-control" required placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="mobile">Mobile Number *</label>
+                        <input type="tel" id="mobile" class="form-control" required placeholder="Enter 10-digit mobile number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address *</label>
+                        <input type="email" id="email" class="form-control" required placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="business">Business Type *</label>
+                        <select id="business" class="form-control" required>
+                            <option value="">Select your business type</option>
+                            <option value="dealer">EV Dealer / Distributor</option>
+                            <option value="fleet">Fleet Operator</option>
+                            <option value="assembler">Battery Assembler</option>
+                            <option value="oem">EV OEM / Manufacturer</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="batteries">Number of Batteries *</label>
+                        <select id="batteries" class="form-control" required>
+                            <option value="">Select range</option>
+                            <option value="<50">Less than 50</option>
+                            <option value="50-200">50 - 200</option>
+                            <option value="200-500">200 - 500</option>
+                            <option value="500+">500+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="city">City / Location *</label>
+                        <input type="text" id="city" class="form-control" required placeholder="Enter your city">
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 40px;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Book Free Demo →<br>
+                            <small style="font-weight: normal; opacity: 0.9;">You'll receive a WhatsApp confirmation within 2 hours</small>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <h4>iRasus Preksha</h4>
+                    <p style="opacity: 0.8; margin-bottom: 20px;">Battery intelligence built for real-world EV businesses.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <div style="background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 6px; font-size: 0.875rem;">
+                            📞 +91 9313 940 440
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#solutions">Solutions</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact">Book Demo</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">API Access</a>
+                    <a href="#">Support Center</a>
+                    <a href="#">Blog</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About iRasus</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 iRasus Technologies. All rights reserved. | Gurugram, India</p>
+                <p style="margin-top: 10px; font-size: 0.875rem;">Backed by Government of India | ISO 9001:2015 Certified</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.faq-question').forEach(item => {
+                item.querySelector('span:last-child').textContent = '+';
+            });
+            
+            // Toggle current FAQ
+            if (!isActive) {
+                answer.classList.add('active');
+                element.querySelector('span:last-child').textContent = '−';
+            }
+        }
+        
+        // Form Submission
+        document.getElementById('demoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const business = document.getElementById('business').value;
+            
+            // Show success message
+            alert(`Thank you ${name}! Your demo request has been submitted. Our team will contact you on ${mobile} within 2 hours.`);
+            
+            // Reset form
+            this.reset();
+            
+            // In real implementation, you would send this data to your backend
+            // fetch('/api/demo-request', {
+            //     method: 'POST',
+            //     body: JSON.stringify(formData)
+            // });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach((el) => {
+            observer.observe(el);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
