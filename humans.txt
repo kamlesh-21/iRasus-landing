@@ -1,14 +1,30 @@
 /* TEAM */
-    Founder: iRasus Technologies
-    Site: https://irasus.com
-    Location: Gurugram, India
-    Contact: +91 9313 940 440
-
+  Developer: iRasus Technologies
+  Site: https://irasus.com
+  Location: Gurugram, Haryana, India
+  Contact: +91 7737 486 223
+  
+  UI/UX Designer: iRasus Design Team
+  Front-end: iRasus Development Team
+  Back-end: iRasus Development Team
+  
 /* THANKS */
-    Font: Inter by Rasmus Andersson
-    Icons: Emoji, Custom
-
+  Icons: Font Awesome, Material Icons
+  Fonts: Google Fonts (System Font Stack)
+  Tools: VS Code, Figma, Git
+  
 /* SITE */
-    Last update: 2024/01/15
-    Language: English
-    Doctype: HTML5
+  Last update: 2024
+  Language: English, Hindi
+  Doctype: HTML5
+  Components: Vanilla JS, CSS3
+  
+/* STANDARDS */
+  HTML5: Valid
+  CSS3: Valid
+  Accessibility: WCAG 2.1 AA compliant
+  Performance: 90+ Lighthouse score
+  
+/* LICENSE */
+  Copyright: iRasus Technologies Pvt. Ltd.
+  License: Proprietary

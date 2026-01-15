@@ -3,56 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo Confirmed! | Preksha by iRasus</title>
+    <title>Thank You | Preksha Demo Booking Confirmed</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .thank-you {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .checkmark {
+            font-size: 4rem;
+            color: #10B981;
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 <body>
-    <div class="thank-you-container">
-        <div class="thank-you-card">
-            <div class="success-icon">✅</div>
-            <h1>Demo Booked Successfully!</h1>
-            <p class="confirmation-text">Our team will WhatsApp you within <strong>15 minutes</strong> to schedule your demo.</p>
-            
-            <div class="next-steps">
-                <h2>Next Steps:</h2>
-                <ol>
-                    <li>Check your WhatsApp for our message</li>
-                    <li>Share your fleet size & battery types</li>
-                    <li>Choose a convenient time (30 mins)</li>
-                    <li>Prepare 2-3 specific questions</li>
-                    <li>Join the demo on phone/computer</li>
-                </ol>
+    <header>
+        <nav>
+            <div class="logo">iRasus Preksha</div>
+        </nav>
+    </header>
+
+    <main class="thank-you container">
+        <div class="checkmark">✓</div>
+        <h1>Demo Booking Confirmed!</h1>
+        <p class="subtitle">We'll contact you within 15 minutes on WhatsApp to schedule your demo.</p>
+        
+        <div class="next-steps">
+            <h3>What happens next:</h3>
+            <ol style="text-align: left; max-width: 500px; margin: 2rem auto;">
+                <li>WhatsApp confirmation within 15 minutes</li>
+                <li>Choose your preferred demo time (30 mins)</li>
+                <li>Receive calendar invite</li>
+                <li>Get demo preparation tips</li>
+            </ol>
+        </div>
+        
+        <a href="/" class="btn btn-primary" style="margin-top: 2rem;">← Back to Home</a>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-footer">iRasus Preksha</div>
+                <p>© 2024 iRasus Technologies Pvt. Ltd. All rights reserved.</p>
             </div>
-            
-            <div class="whatsapp-reminder">
-                <h3>📱 WhatsApp is Faster</h3>
-                <p>If you don't see our message in 15 minutes, message us directly:</p>
-                <a href="https://wa.me/919313940440" class="btn btn-whatsapp" target="_blank">
-                    Message on WhatsApp Now
-                </a>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="https://irasus.com" target="_blank">Main Website</a>
+                <a href="https://irasus.com/industries-demo/" target="_blank">Applications</a>
+                <a href="#demo">Book Another Demo</a>
             </div>
-            
-            <div class="demo-prep">
-                <h3>Prepare for Your Demo:</h3>
-                <ul>
-                    <li>Have your laptop or phone ready</li>
-                    <li>Know your approximate battery count</li>
-                    <li>Think of recent warranty disputes</li>
-                    <li>List your current tracking methods</li>
-                </ul>
+            <div class="footer-contact">
+                <h4>Contact for Demo</h4>
+                <p><a href="tel:+917737486223">📞 +91 7737 486 223</a></p>
+                <p><a href="mailto:demo@irasus.com">📧 demo@irasus.com</a></p>
+                <p>⏰ Mon-Sat, 9 AM - 7 PM</p>
             </div>
-            
-            <div class="action-buttons">
-                <a href="https://irasus.com" class="btn btn-secondary">← Visit Main Site</a>
-                <a href="index.html" class="btn btn-primary">Book Another Demo</a>
-            </div>
-            
-            <div class="contact-info">
-                <p>Need immediate help? Call <strong>+91 9313 940 440</strong></p>
-                <p>Or email <strong>demo@irasus.com</strong></p>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="https://www.linkedin.com/company/irasus" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/irasus" target="_blank">Twitter</a>
+                <a href="https://facebook.com/irasus" target="_blank">Facebook</a>
             </div>
         </div>
-    </div>
+        <div class="footer-bottom">
+            <p>Designed and Developed by iRasus Technologies Pvt. Ltd.</p>
+        </div>
+    </footer>
 </body>
 </html>

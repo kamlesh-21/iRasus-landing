@@ -1,5 +1,13 @@
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 Disallow: /thank-you.html
 
+# Sitemaps
 Sitemap: https://demo.irasus.com/sitemap.xml
+
+# Crawl delay (requests per second)
+Crawl-delay: 2
+
+# Preferred host 
+Host: https://demo.irasus.com
